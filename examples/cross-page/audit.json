@@ -1,0 +1,11 @@
+{
+  "interpretazione_attesa": "descrizione di un controllo svolto",
+  "pagine": [
+    {"pagina": 2, "testo": "Protocollo Salice. Il revisore confronta tre registrazioni con le ricevute originali."},
+    {"pagina": 19, "testo": "Verbale di chiusura. Il gruppo ha applicato il Protocollo Salice e conserva le tre ricevute."}
+  ],
+  "evidenze": [
+    {"pagina": 2, "citazione": "Il revisore confronta tre registrazioni"},
+    {"pagina": 19, "citazione": "Il gruppo ha applicato il Protocollo Salice"}
+  ]
+}

@@ -1,0 +1,25 @@
+@startuml
+!pragma layout smetana
+skinparam shadowing false
+skinparam componentStyle uml2
+top to bottom direction
+package "Percorso operativo" {
+ [Ingresso autenticato] --> [Worker e preparazione]
+ [Worker e preparazione] --> [Detector e lettore contestuale]
+ [Detector e lettore contestuale] --> [Policy del poller]
+ [Policy del poller] --> [Ricevuta]
+}
+package "Percorso multiramo provato offline" {
+ [Copertura delle pagine] --> [Testo e OCR]
+ [Copertura delle pagine] --> [Metadati e geometria]
+ [Testo e OCR] --> [Evidenze con provenienza]
+ [Metadati e geometria] --> [Evidenze con provenienza]
+ [Evidenze con provenienza] --> [Lettore di frammenti distanti] : contesto selezionato
+}
+[Worker e preparazione] ..> [Copertura delle pagine] : prove su documenti
+package "In progetto" {
+ [Giudice strutturato Jev-like] --> [Policy unica versionata]
+}
+[Evidenze con provenienza] ..> [Giudice strutturato Jev-like]
+[Lettore di frammenti distanti] ..> [Policy unica versionata]
+@enduml
